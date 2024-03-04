@@ -43,7 +43,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
     math = new SubjectDTO("Matemáticas", 5.0);
     spanish = new SubjectDTO("Español", 6.0);
     geometry = new SubjectDTO("Geometría", 10.0);
-    
+
     studentDTO = new StudentDTO(33L, "Alejandro", "", 0.0, List.of(
       math, spanish, geometry
     ));
@@ -63,7 +63,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
         .contentType(String.valueOf(MediaType.APPLICATION_JSON))
         .content(TestUtilsGenerator.objectToJson(studentDTO1)))
     .andDo((print()))
-    .andExpect(status().isOk());
+    .andExpect(status().isOk()
   }
 
 
@@ -114,9 +114,4 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 //            .contentType(MediaType.APPLICATION_JSON)
 //            .content(TestUtilsGenerator.objectToJson(studentDTO)));
 //  }
-
-  @Test
-  void modifyStudentTestFail() {
-
-  }
 }
